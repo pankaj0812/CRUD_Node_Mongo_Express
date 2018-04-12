@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Person Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/persons">Person List</a></h3>
+      <h1>Person Detail</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td><%= person.name %></td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>:</td>
+            <td><%= person.age %></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>:</td>
+            <td><%= person.gender %></td>
+          </tr>
+          <tr>
+            <td>Mobile No</td>
+            <td>:</td>
+            <td><%= person.mobileno %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3><a href="/persons/edit/<%= person._id%>">EDIT</a></h3>
+      <form action="/persons/delete/<%= person._id%>" method="post">
+        <button type="submit">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>

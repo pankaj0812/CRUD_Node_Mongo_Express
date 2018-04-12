@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Persons List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/persons/create">Store new record of a Person</a></h3>
+      <h1>Person List</h1>
+      <% if(persons.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>Persons Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Mobile No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i<persons.length;i++) { %>
+            <tr>
+              <td><a href="/persons/show/<%= persons[i]._id%>"><%= persons[i].name%></a></td>
+              <td><%= persons[i].age%></td>
+              <td><%= persons[i].gender%></td>
+              <td><%= persons[i].mobileno%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No details found.</div>
+      <% } %>
+    </div>
+</body>
+</html>
